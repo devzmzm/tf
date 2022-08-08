@@ -2,9 +2,6 @@ const Discord = require("discord.js-selfbot-v13");
 const config = require("./config");
 const handler = require("./src/commandHandler");
 const { DisTube } = require("distube");
-const  SpotifyPlugin  = require("@distube/spotify");
-const  SoundCloudPlugin  = require("@distube/soundcloud");
-const  YtDlpPlugin  = require("@distube/yt-dlp");
 const client = new Discord.Client({
   checkUpdate: false,
 });
@@ -18,20 +15,7 @@ client.distube = new DisTube(client, {
   emitNewSongOnly: true,
   emitAddSongWhenCreatingQueue: true,
   emitAddListWhenCreatingQueue: true,
-  plugins: [
-    new SoundCloudPlugin(),
-    new SpotifyPlugin({
-      emitEventsAfterFetching: false,
-      parallel: false,
-      api: {
-        clientId: process.env.client,
-        clientSecret: process.env.secret,
-      },
-    }),
-    new YtDlpPlugin({
-      update: false,
-    }),
-  ],
+  youtubeDL: false,
   savePreviousSongs: true,
 });
 client

@@ -1,4 +1,4 @@
-const { Constants } = require('discord.js')
+/*const { Constants } = require('discord.js')
 
 module.exports = {
   name: 'join',
@@ -18,4 +18,4 @@ module.exports = {
     }
     client.distube.voices.join(voiceChannel)
   }
-}
+}*/
