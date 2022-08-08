@@ -5,6 +5,7 @@ const { DisTube } = require("distube");
 const client = new Discord.Client({
   checkUpdate: false,
 });
+const owner = [""];
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.emotes = require("./config.json").emoji;
@@ -17,14 +18,17 @@ client.distube = new DisTube(client, {
   emitAddListWhenCreatingQueue: true,
   youtubeDL: false,
   savePreviousSongs: true,
+  youtubeCookie: process.env.cookie
 });
 client
   .on("ready", async () => {
     console.log(`Logged in as ${client.user.tag}!`);
+  client.user.setPresence({ status: "idle"})
     // Register all commands
     await handler(client);
   })
   .on("messageCreate", async (message) => {
+  if (!owner.includes(message.author.id)) return;
     if (
       !message.guild ||
       message.author.bot ||
