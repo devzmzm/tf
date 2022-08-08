@@ -1,5 +1,4 @@
 const Discord = require('discord.js-selfbot-v13');
-const RPC = require('discord-rpc-contructor');
 const config = require('./config');
 const handler = require('./src/commandHandler');
 const { DisTube } = require('distube');
@@ -38,7 +37,7 @@ client
 			console.error(e);
 		}
 	})
-	.login(config.token);
+	.login(process.env.token);
     
 const status = (queue) =>
 	`Volume: \`${queue.volume}%\` | Filter: \`${
