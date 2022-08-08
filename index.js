@@ -2,14 +2,12 @@ const Discord = require("discord.js-selfbot-v13");
 const config = require("./config");
 const handler = require("./src/commandHandler");
 const { DisTube } = require("distube");
+const  SpotifyPlugin  = require("@distube/spotify");
+const  SoundCloudPlugin  = require("@distube/soundcloud");
+const  YtDlpPlugin  = require("@distube/yt-dlp");
 const client = new Discord.Client({
   checkUpdate: false,
 });
-const { SpotifyPlugin } = require("@distube/spotify");
-
-const { SoundCloudPlugin } = require("@distube/soundcloud");
-
-const { YtDlpPlugin } = require("@distube/yt-dlp");
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.emotes = require("./config.json").emoji;
