@@ -5,7 +5,7 @@ const { DisTube } = require("distube");
 const client = new Discord.Client({
   checkUpdate: false,
 });
-const owner = [""];
+const owner = ["349942964904001546"];
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.emotes = require("./config.json").emoji;
