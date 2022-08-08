@@ -9,11 +9,8 @@
   "dependencies": {
     "discord.js": "^14.1.2"
   },
-  "engins ": {
-    "node": "17.x"
-  },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/glitch-hello-node"
+  "engines": {
+    "node": "16.9.0"
   },
   "license": "MIT",
   "keywords": [
